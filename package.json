@@ -1,5 +1,5 @@
 {
-  "name": "mdn-app",
+  "name": "mdn-express",
   "version": "0.0.0",
   "private": true,
   "scripts": {
