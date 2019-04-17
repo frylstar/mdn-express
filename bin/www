@@ -1,7 +1,11 @@
 #!/usr/bin/env node
-
 /**
- * Module dependencies.
+ * 应用入口文件！
+ */
+/**
+ * Module dependencies.模块依赖项
+ * require()是一个全局的node函数，可将模块导入当前文件
+ * require()"真实"的应用入口（即项目根目录中的app.js）,app.js会设置并返回express()应用对象
  */
 
 var app = require('../app');
@@ -10,13 +14,14 @@ var http = require('http');
 
 /**
  * Get port from environment and store in Express.
+ * 先为app设置端口（环境变量中的预定义值或默认值3000）
  */
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
- * Create HTTP server.
+ * Create HTTP server.创建HTTP服务器
  */
 
 var server = http.createServer(app);

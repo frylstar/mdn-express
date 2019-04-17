@@ -1,12 +1,16 @@
+// 处理错误中间件
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+// 用于解析cookie头来填充req.cookies(提供了访问cookie信息的便捷方法)
 var cookieParser = require('cookie-parser');
+// node 专用 HTTP 请求记录器中间件
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+// 创建一个express应用对象（依照惯例命名为app）
 var app = express();
 
 // view engine setup
