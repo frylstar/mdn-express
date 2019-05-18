@@ -14,6 +14,15 @@ var usersRouter = require('./routes/users');
 // 创建一个express应用对象（依照惯例命名为app）
 var app = express();
 
+// 设置 Mongoose 连接
+const mongoose = require('mongoose');
+const mongoDB = 'mongodb://127.0.0.1:27017';
+mongoose.connect(mongoDB);
+mongoose.Promist = global.Promise;
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB连接错误: '));
+
+
 // view engine setup(视图引擎设定)
 // 设置'view'以指定模板的存储文件夹（此处设为子文件夹/views）
 // 然后设置'view engine'以指定模板库（此处为"pug"）
