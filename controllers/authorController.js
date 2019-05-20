@@ -9,7 +9,7 @@ exports.author_detail = (req, res) => {
   res.send('未实现，作者详细信息：' + req.params.id);
 }
 // 由GET显示创建作者的表单
-exports.author_create_post = (req, res) => {
+exports.author_create_get = (req, res) => {
   res.send('未实现，作者创建表单的GET');
 }
 // 由 POST 处理作者创建操作

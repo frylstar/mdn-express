@@ -8,7 +8,7 @@ var router = express.Router();
 // 然后将结果作为响应发送
 // 该路由使用'index'模板和一个模板变量title来渲染响应
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('/catalog', { title: 'Express' });
 });
 
 module.exports = router;

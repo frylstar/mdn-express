@@ -8,8 +8,9 @@ var cookieParser = require('cookie-parser');
 // node 专用 HTTP 请求记录器中间件
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
+const catalogRouter = require('./routes/catalog');
 
 // 创建一个express应用对象（依照惯例命名为app）
 var app = express();
@@ -40,6 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // 把之前导入的路由处理器添加到请求处理链中，从而为网站的不同部分定义具体的路由
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/catalog', catalogRouter);
 
 // catch 404 and forward to error handler
 // 捕获 404 并抛给错误处理器
