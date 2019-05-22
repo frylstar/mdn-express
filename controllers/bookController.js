@@ -59,5 +59,13 @@ exports.book_update_post = (req, res) => {
 }
 
 exports.book_list = (req, res) => {
-  res.send('未实现')
+  // 模型的find()函数返回所有Book对象，选择仅返回标题title 和 作者author
+  // Book上的populate()，指定作者author字段——这将用完整的作者信息，替换存储的书本作者id
+  Book.find({}, 'title author')
+    .populate('author')
+    .exec(function (err, list_books) {
+      if (err) { return next(err) }
+      // Successful, so render
+      res.render('book_list', { title: 'Book List', book_list: list_books })
+    })
 }
